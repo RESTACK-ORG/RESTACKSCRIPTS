@@ -1,0 +1,15 @@
+{
+  "name": "restackscripts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "upload-storage": "node scripts/firebase/upload-to-storage.js",
+    "upload-firestore": "node scripts/firebase/upload-to-firestore.js",
+    "export-firestore": "node scripts/firebase/export-from-firestore.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^13.4.0"
+  }
+}

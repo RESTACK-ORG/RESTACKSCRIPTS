@@ -1,6 +1,6 @@
-const fs = require("fs");
-const admin = require("firebase-admin");
-// const serviceAccount = require('../../keys/service-accounts/masal.json');       // uncomment this line and update the service account key path when you run the script
+import fs from 'fs';
+import admin from 'firebase-admin'
+import serviceAccount from '../../secrets/service-accounts/acn.json' assert { type: 'json' };
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -15,7 +15,7 @@ function loadDataset(filePath) {
 
 async function updateFirestoreDocuments(dataset) {
   for (const record of dataset) {
-    // const docRef = db.collection("new_users").doc(record.id);    // uncomment this line and update the collection name when you run the script
+    const docRef = db.collection("ACN123").doc(record.id);
 
     try {
       await docRef.set(record, { merge: true });
@@ -30,7 +30,7 @@ async function updateFirestoreDocuments(dataset) {
 }
 
 async function main() {
-  const inputFilePath = "../../exports/new_users.json";  // update the source file path
+  const inputFilePath = "exports/acn_properties.json";
   const dataset = loadDataset(inputFilePath);
   await updateFirestoreDocuments(dataset);
 }

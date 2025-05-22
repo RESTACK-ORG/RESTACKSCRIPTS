@@ -1,6 +1,4 @@
-# Project
-
-This project contains scripts for interacting with Firebase.
+This project contains scripts for interacting with RESTACKDATASETS.
 
 
 ## Getting Started

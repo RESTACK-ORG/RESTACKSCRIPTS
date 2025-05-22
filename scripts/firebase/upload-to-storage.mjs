@@ -1,8 +1,10 @@
-const admin = require('firebase-admin');
 const path = require('path');
-const fs = require('fs');
+import fs from 'fs';
+import path from 'path';
+import admin from 'firebase-admin'
+import serviceAccount from '../../secrets/service-accounts/rera.json' assert { type: 'json' };     // update service account keys
 
-const serviceAccount = require('secrets/service-accounts/rera.json');     // update service account keys
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 //   storageBucket: 'gs://rera-mirror.firebasestorage.app'     //  update storage bucket url, can be accessed after initialising storage in firebase console

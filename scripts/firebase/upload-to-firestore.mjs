@@ -1,6 +1,6 @@
 import fs from 'fs';
 import admin from 'firebase-admin'
-import serviceAccount from '../../secrets/service-accounts/acn.json' assert { type: 'json' };
+import serviceAccount from '../../secrets/service-accounts/masal.json' assert { type: 'json' };
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -30,7 +30,7 @@ async function updateFirestoreDocuments(dataset) {
 }
 
 async function main() {
-  const inputFilePath = "exports/acn_properties.json";
+  const inputFilePath = "exports/masal-properties.json";
   const dataset = loadDataset(inputFilePath);
   await updateFirestoreDocuments(dataset);
 }

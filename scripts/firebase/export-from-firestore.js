@@ -2,7 +2,7 @@ import fs from "fs";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 const serviceAccount = JSON.parse(
-  fs.readFileSync("secrets/service-accounts/acn.json", "utf-8") // uncomment this line and update the service account key path when you run the script
+  fs.readFileSync("secrets/service-accounts/masal.json", "utf-8") // uncomment this line and update the service account key path when you run the script
 );
 
 initializeApp({
@@ -12,7 +12,7 @@ initializeApp({
 const db = getFirestore();
 
 const exportData = async () => {
-    const usersRef = db.collection('ACN123')
+    const usersRef = db.collection('assetData')
   const snapshot = await usersRef.get();
 
   if (snapshot.empty) {
@@ -28,7 +28,7 @@ const exportData = async () => {
   });
 
   const json = JSON.stringify(data, null, 2);
-    fs.writeFileSync('exports/acn_properties.json', json);  // update exported file path
+    fs.writeFileSync('exports/masal_properties.json', json);  // update exported file path
   console.log("Data exported successfully");
 };
 

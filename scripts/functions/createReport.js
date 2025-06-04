@@ -147,9 +147,8 @@ function calculateIRRMonthly(values, initialGuess = 0.05) {
 
 function createReport(data){
   try {
-let { acquisitionPrice, tenure, holdingPeriod, constructionCompletionDate, finalPrice, interestRate, loanPercentage, selectedCharge, assetType } = data;
+let { acquisitionPrice, tenure, holdingPeriod, constructionCompletionDate, finalPrice, interestRate, loanPercentage, selectedCharge, assetType } = data
 
-console.log({ acquisitionPrice, tenure, holdingPeriod, constructionCompletionDate, finalPrice, interestRate, loanPercentage, selectedCharge, assetType })
       if(!constructionCompletionDate)
       {
         constructionCompletionDate = "2026-12-31";
@@ -409,14 +408,9 @@ console.log({ acquisitionPrice, tenure, holdingPeriod, constructionCompletionDat
 
       cashflows = cashflows.filter(val => !isNaN(val) && isFinite(val));
 
-      // irr for yearly cashflow 
-      // let irr = IRR(cashflows);
       
-      // if(irr===Infinity || irr===0) 
-      // irr = irrBisection(cashflows);
 
 
-      // if (irr === '#NUM') throw new Error("At least one positive and one negative cashflow required");
 
       const monthly_cashflow= table.map((tab)=>tab[8]);
 
@@ -447,20 +441,7 @@ console.log({ acquisitionPrice, tenure, holdingPeriod, constructionCompletionDat
 
       console.log(totalInvestment);
       return {
-            // irr: parseFloat((irr * 100).toFixed(2)),
             xirr:parseFloat((irrForMonthlyCashflow * 100).toFixed(2)),
-            // cashflows_yearly: cashflows,
-            // booking_amount: bookingAmount,
-            // possession_amount:possessionAmount,
-            // charges_value: transferOrStampRegCharges,
-            // amount_not_disbursed: Math.max(0,remainingLoanAmount - amtDisbursed), 
-            total_investment: totalInvestment,
-            // total_returns : totalReturns,
-            // loan_balance: Math.ceil(loanAmount),
-            // cagr:cagr,
-            // constructionCompletionDate:constructionDate.format("YYYY-MM-DD"),
-            // equity_multiplier: parseFloat(((totalInvestment + totalReturns) / totalInvestment).toFixed(2)),
-            // monthly_cf: table
 
       };
   } catch (error) {

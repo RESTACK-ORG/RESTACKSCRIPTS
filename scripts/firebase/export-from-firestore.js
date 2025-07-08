@@ -25,7 +25,7 @@ const exportData = async () => {
   snapshot.forEach((doc) => {
     const docData = doc.data();
 
-   if (docData.auction === true) {
+   if (docData.auction === true || docData.auction === false) {
     data.push({
       id: doc.id,
       ...docData

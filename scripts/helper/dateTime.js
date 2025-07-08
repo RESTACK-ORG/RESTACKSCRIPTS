@@ -8,7 +8,7 @@ export function convertDateToUnix(dateString) {
                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const monthIndex = monthNames.indexOf(month);
 
-  const date = new Date(year, monthIndex, day, 12, 0, 0); // Midday
+  const date = new Date(year, monthIndex, day, 0, 0, 0); // Midday
 
   return date.getTime() / 1000;
 }

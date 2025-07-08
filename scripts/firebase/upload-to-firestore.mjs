@@ -15,7 +15,7 @@ function loadDataset(filePath) {
 
 async function updateFirestoreDocuments(dataset) {
   for (const record of dataset) {
-    const docRef = db.collection("ACN123").doc(record.id);
+    const docRef = db.collection("assetData").doc(record.id);
 
     try {
       await docRef.set(record, { merge: true });
@@ -30,7 +30,7 @@ async function updateFirestoreDocuments(dataset) {
 }
 
 async function main() {
-  const inputFilePath = "exports/masal-properties.json";
+  const inputFilePath = "exports/main.json";
   const dataset = loadDataset(inputFilePath);
   await updateFirestoreDocuments(dataset);
 }

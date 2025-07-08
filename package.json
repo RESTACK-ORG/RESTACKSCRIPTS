@@ -10,7 +10,8 @@
     "match-csv": "node scripts/utils/match-2-csvs.mjs",
     "add-xirr": "node scripts/truestate/add-xirr-to-project.js",
     "csv-json": "node scripts/utils/csv-to-json.js",
-    "format-auctions": "node scripts/utils/format-auctions.js"
+    "format-auctions": "node scripts/utils/format-auctions.js",
+     "match-auctions": "node scripts/utils/match-auctions.js"
   },
   "author": "",
   "license": "ISC",

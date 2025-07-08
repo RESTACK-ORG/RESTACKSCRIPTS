@@ -24,11 +24,18 @@ const exportData = async () => {
 
   snapshot.forEach((doc) => {
     const docData = doc.data();
-    data.push({ id: doc.id, ...docData });
+
+   if (docData.auction === true) {
+    data.push({
+      id: doc.id,
+      ...docData
+    });
+  }
+
   });
 
   const json = JSON.stringify(data, null, 2);
-    fs.writeFileSync('exports/masal_properties.json', json);  // update exported file path
+    fs.writeFileSync('exports/auction_properties.json', json);  // update exported file path
   console.log("Data exported successfully");
 };
 

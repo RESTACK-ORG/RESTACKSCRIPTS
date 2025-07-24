@@ -11,7 +11,9 @@
     "add-xirr": "node scripts/truestate/add-xirr-to-project.js",
     "csv-json": "node scripts/utils/csv-to-json.js",
     "format-auctions": "node scripts/utils/format-auctions.js",
-     "match-auctions": "node scripts/utils/match-auctions.js"
+    "match-auctions": "node scripts/utils/match-auctions.js",
+    "add-missing": "node scripts/utils/add-missing-fields.js",
+    "agents-leads": "node scripts/utils/get-agents-leads.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,6 @@
+/node_modules
+/secrets
+/upload-doc
+/exports
+.DS_Store
+/uncompressed-docs

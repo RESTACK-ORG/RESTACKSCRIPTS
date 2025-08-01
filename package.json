@@ -1,0 +1,33 @@
+{
+  "name": "restackscripts",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "upload-storage": "node scripts/firebase/upload-to-storage.mjs",
+    "upload-firestore": "node scripts/firebase/upload-to-firestore.mjs",
+    "export-firestore": "node scripts/firebase/export-from-firestore.js",
+    "match-csv": "node scripts/utils/match-2-csvs.mjs",
+    "add-xirr": "node scripts/truestate/add-xirr-to-project.js",
+    "csv-json": "node scripts/utils/csv-to-json.js",
+    "format-auctions": "node scripts/utils/format-auctions.js",
+    "match-auctions": "node scripts/utils/match-auctions.js",
+    "add-missing": "node scripts/utils/add-missing-fields.js",
+    "agents-leads": "node scripts/utils/get-agents-leads.js",
+    "compress": "node scripts/utils/compress-pdf-advanced.js",
+    "migrate-users": "node scripts/migration/truestateUsers.js",
+    "migrate-auctions": "node scripts/migration/truestateProjectsAuctions.js",
+    "migrate-prelaunch": "node scripts/migration/truestateProjectsPrelaunch.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "csv-parser": "^3.2.0",
+    "firebase-admin": "^13.4.0",
+    "moment": "^2.30.1",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.34.3"
+  }
+}
